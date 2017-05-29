@@ -11,7 +11,7 @@
     ],
     "require": {
         "cweagans/composer-patches": "~1.0",
-        "drupal/drupal-extension": "dev-master",
+        "drupal/drupal-extension": "dev-master"
     },
     "require-dev": {
         "behat/mink": "~1.7",
@@ -24,18 +24,12 @@
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
-    "autoload": {
-        "classmap": [
-            "scripts/composer/ScriptHandler.php"
-        ]
-    },
     "extra": {
         "patches": {
             "drupal/drupal-extension": {
                 "Create EntityContext": "https://github.com/jhedstrom/drupalextension/pull/300.patch",
-                "Create an AuthenticationManager service": "https://github.com/jhedstrom/drupalextension/pull/339.patch",
-                "Do not assume nodes of all types have 'body' fields": "https://github.com/jhedstrom/drupalextension/pull/263.patch"
-            },
+                "Create an AuthenticationManager service": "https://github.com/jhedstrom/drupalextension/pull/339.patch"
+            }
         }
     },
     "replace": {
