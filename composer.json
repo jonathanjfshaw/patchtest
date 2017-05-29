@@ -1,0 +1,47 @@
+{
+    "name": "jonathanjfshaw/patchtest",
+    "description": "Test using composer to apply a github patch to drupal behat extension",
+    "type": "project",
+    "license": "GPL-2.0+",
+    "authors": [
+        {
+            "name": "",
+            "role": ""
+        }
+    ],
+    "require": {
+        "cweagans/composer-patches": "~1.0",
+        "drupal/drupal-extension": "dev-master",
+    },
+    "require-dev": {
+        "behat/mink": "~1.7",
+        "behat/mink-goutte-driver": "~1.2",
+        "jcalderonzumba/gastonjs": "~1.0.2",
+        "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
+        "mikey179/vfsStream": "~1.2",
+        "phpunit/phpunit": "~4.8",
+        "symfony/css-selector": "~2.8"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "classmap": [
+            "scripts/composer/ScriptHandler.php"
+        ]
+    },
+    "extra": {
+        "patches": {
+            "drupal/drupal-extension": {
+                "Create EntityContext": "https://github.com/jhedstrom/drupalextension/pull/300.patch",
+                "Create an AuthenticationManager service": "https://github.com/jhedstrom/drupalextension/pull/339.patch",
+                "Do not assume nodes of all types have 'body' fields": "https://github.com/jhedstrom/drupalextension/pull/263.patch"
+            },
+        }
+    },
+    "replace": {
+        "drupal/drupal": "*"
+    },
+	"config": {
+        "process-timeout": 1200
+    }
+}
